@@ -7,6 +7,13 @@ Goals
 1. Create a project plan page with goals [done]
 1. Instal GitHub Desktop [done]
 1. Instal Atom [done]
+1. Install atom packages
+    1. auto-update-packages
+    1. auto-close-html-plus
+    1. autocomplete-paths
+    1. highlight-selected
+    1. teletype
+    1. todo-show
 1. Set up web project folders
 1. Create a page to handle gamepad events
     1. Left, Right, Button 1, Button 2
