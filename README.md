@@ -14,9 +14,10 @@ Goals
     1. highlight-selected [done]
     1. teletype
     1. todo-show
+    1. atom-beautify
 1. Set up web project folders
 1. Create a page to handle gamepad events
-    1. Left, Right, Button 1, Button 2
+    1. Left, Right, Button 1, Button 2, ...
 1. Create a page to play video
 1. Add buttons to control the video
     1. Play, Stop, Rewind, Fastforward
