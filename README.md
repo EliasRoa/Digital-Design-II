@@ -5,6 +5,8 @@
 Goals
 1. Set up a GitHub account [done]
 1. Create a project plan page with goals [done]
+1. Instal GitHub Desktop [done]
+1. Instal Atom [done]
 1. Set up web project folders
 1. Create a page to handle gamepad events
     1. Left, Right, Button 1, Button 2
