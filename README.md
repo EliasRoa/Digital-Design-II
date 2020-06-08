@@ -3,15 +3,15 @@
 ## Digital Design Final Project Plan
 
 Goals
-1. Set up a GitHub account [done]
-1. Create a project plan page with goals [done]
-1. Instal GitHub Desktop [done]
-1. Instal Atom [done]
+1. ~Set up a GitHub account~ [done]
+1. ~Create a project plan page with goals~ [done]
+1. ~Instal GitHub Desktop~ [done]
+1. ~Instal Atom~ [done]
 1. Install atom packages
-    1. auto-update-packages [done]
-    1. auto-close-html-plus [done]
-    1. autocomplete-paths [done]
-    1. highlight-selected [done]
+    1. ~auto-update-packages~ [done]
+    1. ~auto-close-html-plus~ [done]
+    1. ~autocomplete-paths~ [done]
+    1. ~highlight-selected~ [done]
     1. teletype
     1. todo-show
     1. atom-beautify
