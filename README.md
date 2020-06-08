@@ -20,8 +20,8 @@ Goals
     1. Left, Right, Button 1, Button 2, ...
 1. Create a page to play video
 1. Add buttons to control the video
-    1. Play, Stop, Rewind, Fastforward
+    1. Play, Stop, Rewind, Fast Forward
 1. Add ability to control the video with gamepad
-    1. Play, Stop, Rewind, Fastforward
+    1. Play, Stop, Rewind, Fast Forward
 
 Publish project to GitHub and deploy to web server for each goal.
