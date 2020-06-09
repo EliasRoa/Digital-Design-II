@@ -7,7 +7,7 @@ Goals
 1. ~Create a project plan page with goals~ [done]
 1. ~Instal GitHub Desktop~ [done]
 1. ~Instal Atom~ [done]
-1. Install atom packages
+1. ~Install atom packages~ [done]
     1. ~auto-update-packages~ [done]
     1. ~auto-close-html-plus~ [done]
     1. ~autocomplete-paths~ [done]
