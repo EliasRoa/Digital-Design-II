@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <div id="content"></div>
+
+  <script src="js/scripts.js"></script>
+  <script>
+    var html = document.getElementById('content');
+    //html.innerHTML = "Hello from JS";
+
+    function processInput() {
+      html.innerHTML = "<p>processInput()</p>";
+    }
+
+    function update() {
+      html.innerHTML += "<p>update()</p>";
+    }
+
+    var lastTimestamp = 0;
+
+    function render(timestamp) {
+      var elapsed = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
+      var calculatedFps = 1000 / elapsed;
+
+      html.innerHTML += `<p>fps = ${calculatedFps}</p>`;
+    }
+
+    // Gameloop
+    function loop(timestamp) {
+      processInput();
+      update();
+      render(timestamp);
+
+      doLoop();
+    }
+
+    // Trigger a new exectution of the game loop.
+    // try 2, 5, 10, 20, 30, 40, 50, 60;
+    var fps = 61;
+
+    function doLoop() {
+      setTimeout(function() {
+        requestAnimationFrame(loop);
+      }, 1000 / fps);
+    }
+
+    // Start the game loop trigger.
+    doLoop();
+  </script>
+</body>
+
+</html>

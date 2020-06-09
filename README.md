@@ -12,10 +12,11 @@ Goals
     1. ~auto-close-html-plus~ [done]
     1. ~autocomplete-paths~ [done]
     1. ~highlight-selected~ [done]
-    1. teletype
-    1. todo-show
-    1. atom-beautify
-1. Set up web project folders
+    1. ~teletype~ [done]
+    1. ~todo-show~ [done]
+    1. ~atom-beautify~ [done]
+1. ~Set up web project folders~ [done]
+1. ~Create a simple game loop~ [done]
 1. Create a page to handle gamepad events
     1. Left, Right, Button 1, Button 2, ...
 1. Create a page to play video
@@ -36,3 +37,5 @@ Publish project to GitHub and deploy to web server for each goal.
   render();
 }`
 * Gamepad API https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API
+* Start a simple web server with python
+`python -m SimpleHTTPServer 8080`
