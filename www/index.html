@@ -10,34 +10,70 @@
   <meta name="author" content="https://github.com/EliasRoa">
 
   <link rel="stylesheet" href="css/site.css?v=1.0">
-
+  <style>
+    .pressed {
+      background-color: tomato;
+    }
+  </style>
 </head>
 
 <body>
+  <!--
+  TODO: Add a video player.
+  -->
+
+  <!--
+  TODO: Add buttons for play, pause, jump to start, jump to end.
+  -->
   <div id="content"></div>
 
   <script src="js/site.js"></script>
   <script>
+    // Video Player functions.
+
+    // TODO: Add functions for player controls.
+  </script>
+
+  <script>
+    // Gameloop functions.
+
+    // Global variables.
     var html = document.getElementById('content');
-    //html.innerHTML = "Hello from JS";
     var connected = false;
+    var gamepad;
 
     function processInput() {
       html.innerHTML = "<p>processInput()</p>";
+
+      // Get a snapshot of the gamepad.
+      gamepad = navigator.getGamepads()[0];
     }
 
     function update() {
       html.innerHTML += "<p>update()</p>";
+
+      // TODO: Add code to change the video player when the gamepad buttons are pressed.
     }
 
     var lastTimestamp = 0;
 
     function render(timestamp) {
+      // Calulate the fps.
       var elapsed = timestamp - lastTimestamp;
       lastTimestamp = timestamp;
       var calculatedFps = 1000 / elapsed;
 
       html.innerHTML += `<p>fps = ${calculatedFps}</p>`;
+
+      // Display the status of each button from the gamepad snapshot.
+      gamepad.buttons.forEach(function(button, index) {
+        var pClass = "";
+        if (button.pressed == true) {
+          var pClass = "pressed";
+        }
+
+        html.innerHTML += `<p class="${pClass}">button ${index} pressed is ${button.pressed}</p>`;
+      })
     }
 
     // Gameloop
@@ -46,25 +82,28 @@
       update();
       render(timestamp);
 
-      // If the controller is connected, then do another loop.
-      if (connected == true) {
-        doLoop();
-      } else {
-        disconnected();
-      }
 
+      doLoop();
     }
 
     // Trigger a new exectution of the game loop.
     // try 2, 5, 10, 20, 30, 40, 50, 60;
-    var fps = 2;
+    var fps = 60;
 
     function doLoop() {
-      setTimeout(function() {
-        requestAnimationFrame(loop);
-      }, 1000 / fps);
+
+      if (connected == true) {
+        // If the controller is connected, then do another loop.
+        setTimeout(function() {
+          requestAnimationFrame(loop);
+        }, 1000 / fps);
+      } else {
+        // Do the disconnect operations.
+        disconnected();
+      }
     }
 
+    // Reset the page variables for when th egamepad is disconnected.
     function disconnected() {
       html.innerHTML = "<p>Please Connect The Controller</p>";
       connected = false;
@@ -72,10 +111,13 @@
 
     // Events
     // https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API
+
+    // The window load event.
     window.addEventListener('load', (event) => {
       disconnected();
     });
 
+    // This is triggered when the gamepad is connected.
     window.addEventListener("gamepadconnected", function(e) {
       console.log("Gamepad connected at index %d: %s. %d buttons, %d axes.",
         e.gamepad.index, e.gamepad.id,
@@ -86,6 +128,8 @@
       doLoop();
 
     });
+
+    // This is triggered when th egamepad is disconnected.
     window.addEventListener("gamepaddisconnected", function(e) {
       console.log("Gamepad disconnected from index %d: %s",
         e.gamepad.index, e.gamepad.id);

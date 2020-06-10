@@ -17,8 +17,8 @@ Goals
     1. ~atom-beautify~ [done]
 1. ~Set up web project folders~ [done]
 1. ~Create a simple game loop~ [done]
-1. Create a page to handle gamepad events
-    1. Left, Right, Button 1, Button 2, ...
+1. ~Create a page to handle gamepad events~ [done]
+    1. ~Left, Right, Button 1, Button 2, ...~ [done]
 1. Create a page to play video
 1. Add buttons to control the video
     1. Play, Stop, Rewind, Fast Forward
