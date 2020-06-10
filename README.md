@@ -30,7 +30,7 @@ Publish project to GitHub and deploy to web server for each goal.
 ## Notes
 * Basic html template https://www.sitepoint.com/a-basic-html5-template/
 * Game loop basics http://gameprogrammingpatterns.com/game-loop.html
-`while (true)
+```(while (true)```
 {
   processInput();
   update();
