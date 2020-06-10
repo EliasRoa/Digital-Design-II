@@ -9,17 +9,18 @@
   <meta name="description" content="Digial Design II Final Project">
   <meta name="author" content="https://github.com/EliasRoa">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="css/site.css?v=1.0">
 
 </head>
 
 <body>
   <div id="content"></div>
 
-  <script src="js/scripts.js"></script>
+  <script src="js/site.js"></script>
   <script>
     var html = document.getElementById('content');
     //html.innerHTML = "Hello from JS";
+    var connected = false;
 
     function processInput() {
       html.innerHTML = "<p>processInput()</p>";
@@ -45,12 +46,18 @@
       update();
       render(timestamp);
 
-      doLoop();
+      // If the controller is connected, then do another loop.
+      if (connected == true) {
+        doLoop();
+      } else {
+        disconnected();
+      }
+
     }
 
     // Trigger a new exectution of the game loop.
     // try 2, 5, 10, 20, 30, 40, 50, 60;
-    var fps = 61;
+    var fps = 2;
 
     function doLoop() {
       setTimeout(function() {
@@ -58,8 +65,34 @@
       }, 1000 / fps);
     }
 
-    // Start the game loop trigger.
-    doLoop();
+    function disconnected() {
+      html.innerHTML = "<p>Please Connect The Controller</p>";
+      connected = false;
+    }
+
+    // Events
+    // https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API
+    window.addEventListener('load', (event) => {
+      disconnected();
+    });
+
+    window.addEventListener("gamepadconnected", function(e) {
+      console.log("Gamepad connected at index %d: %s. %d buttons, %d axes.",
+        e.gamepad.index, e.gamepad.id,
+        e.gamepad.buttons.length, e.gamepad.axes.length);
+
+      // Start the game loop trigger.
+      connected = true;
+      doLoop();
+
+    });
+    window.addEventListener("gamepaddisconnected", function(e) {
+      console.log("Gamepad disconnected from index %d: %s",
+        e.gamepad.index, e.gamepad.id);
+
+      disconnected();
+
+    });
   </script>
 </body>
 
