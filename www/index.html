@@ -56,11 +56,11 @@
     }
 
     function skipBack() {
-      media.currentTime -= 3;
+      media.currentTime -= 0.3;
     }
 
     function skipForward() {
-      media.currentTime += 3;
+      media.currentTime += 0.3;
     }
   </script>
 
@@ -103,7 +103,20 @@
         }
 
         html.innerHTML += `<p class="${pClass}">button ${index} pressed is ${button.pressed}</p>`;
-      })
+      });
+
+      if (gamepad.buttons[0].pressed == true) {
+        playVideo();
+      } else if (gamepad.buttons[5].pressed == true || gamepad.buttons[7].pressed == true || gamepad.buttons[15].pressed == true) {
+        skipForward();
+      } else if (gamepad.buttons[4].pressed == true || gamepad.buttons[6].pressed == true || gamepad.buttons[14].pressed == true) {
+        skipBack();
+      } else if (gamepad.buttons[1].pressed == true || gamepad.buttons[9].pressed == true) {
+        pauseVideo();
+      } else if (gamepad.buttons[2].pressed == true) {
+        gotoStart();
+      }
+
     }
 
     // Gameloop
