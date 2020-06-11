@@ -38,7 +38,7 @@ while (true)
   render();
 }
 ```
-* Gamepad API https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API
+* The Gamepad API https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API
 * The Media API https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Video_and_audio_APIs
 * Start a simple web server with python
 `python -m SimpleHTTPServer 8080`
