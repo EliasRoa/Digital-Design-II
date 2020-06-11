@@ -20,18 +20,48 @@
 <body>
   <!--
   TODO: Add a video player.
+  https://media-src.nzonscreen.com/0000/5698/4867.Apple.0253.HI.m4v
   -->
+  <video controls>
+    <source src="https://media-src.nzonscreen.com/0000/5698/4867.Apple.0253.HI.m4v" type="video/mp4">
+    <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p>
+  </video>
+  <div>
+    <button onclick="skipBack()">Backwards</button>
+    <button onclick="playVideo()">Play</button>
+    <button onclick="pauseVideo()">Pause</button>
+    <button onclick="skipForward()">Forward</button>
+    <button onclick="gotoStart()">Start</button>
+  </div>
 
-  <!--
-  TODO: Add buttons for play, pause, jump to start, jump to end.
-  -->
   <div id="content"></div>
 
   <script src="js/site.js"></script>
   <script>
     // Video Player functions.
+    var media = document.querySelector('video');
 
     // TODO: Add functions for player controls.
+    function playVideo() {
+      media.play();
+    }
+
+    function pauseVideo() {
+      media.pause();
+    }
+
+    function gotoStart() {
+      media.pause();
+      media.currentTime = 0;
+    }
+
+    function skipBack() {
+      media.currentTime -= 3;
+    }
+
+    function skipForward() {
+      media.currentTime += 3;
+    }
   </script>
 
   <script>
