@@ -19,11 +19,11 @@ Goals
 1. ~Create a simple game loop~ [done]
 1. ~Create a page to handle gamepad events~ [done]
     1. ~Left, Right, Button 1, Button 2, ...~ [done]
-1. Create a page to play video
-1. Add buttons to control the video
-    1. Play, Stop, Rewind, Fast Forward
-1. Add ability to control the video with gamepad
-    1. Play, Stop, Rewind, Fast Forward
+1. ~Create a page to play video~ [done]
+1. ~Add buttons to control the video~ [done]
+    1. ~Play, Stop, Rewind, Fast Forward~ [done]
+1. ~Add ability to control the video with gamepad~ [done]
+    1. ~Play, Stop, Rewind, Fast Forward~ [done]
 
 Publish project to GitHub and deploy to web server for each goal.
 
